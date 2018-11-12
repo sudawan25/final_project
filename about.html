@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!--สำคัญ-->
+    <link rel="stylesheet" href="./css//learn.css">
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <!--script-js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>template</title>
+
+</head>
+<style>
+    #D_navbar_footer,
+        {
+        position: absolute;
+    }
+
+    #A_navbar_top {
+        top: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    #B_learn {
+        top: 59px;
+        width: 100%;
+        bottom: 100px;
+    }
+
+    #D_navbar_footer {
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    padding: 90px 0;
+    }
+
+.aboutus-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+}
+.aboutus-title::after {
+    background: blue none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 125px;
+}
+.aboutus-text {
+    color: #606060;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 35px;
+    text-align: justify;
+}
+
+a:hover, a:active {
+    color: lightblue;
+    text-decoration: none;
+    outline: 0;
+}
+
+.feature .feature-box .iconset {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    position: relative;
+    width: 18%;
+}
+.feature .feature-box .iconset::after {
+    background: blue none repeat scroll 0 0;
+    content: "";
+    height: 150%;
+    left: 43%;
+    position: absolute;
+    top: 100%;
+    width: 1px;
+}
+
+.feature .feature-box .feature-content h4 {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+}
+
+
+.feature .feature-box .feature-content {
+    float: left;
+    padding-left: 28px;
+    width: 78%;
+}
+.feature .feature-box .feature-content h4 {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+}
+.feature .feature-box .feature-content p {
+    color: #606060;
+    font-size: 13px;
+    line-height: 22px;
+}
+.icon {
+    color : #f4b841;
+    padding:0px;
+    font-size:40px;
+    border: 1px solid #fdb801;
+    border-radius: 100px;
+    color: #fdb801;
+    font-size: 28px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+}
+.aboutus-section{
+    margin-top: 5%;
+}
+
+</style>
+
+<body>
+    <div id="container">
+        <!--Navbar-->
+        <div id="A_navbar_top">
+            <div class="sticky-top" style="width: 100%">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="width: 100%">
+                    <div class="col-md-9" style="margin-left: 3%;">
+                        <a class="navbar-brand" href="#">
+                            <img src="./picture/programming.png" alt="Programming Language" class="logo">
+                        </a>
+                    </div>
+
+                    <div class="col-md-3" style="margin-left: 0%;">
+                        <div class="collapse navbar-collapse" id="navbarsmenu">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./../../moodle/my/index.php">หน้าแรก
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link FullUserName" href="#">
+                                        User
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="https://example.com" id="menu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="menu">
+                                        <a class="dropdown-item" href="./../../moodle/index.php">วิชาเรียนทั้งหมด</a>
+                                        <a class="dropdown-item ">รายงาน</a>
+                                        <a class="dropdown-item" href="./../../moodle/user/profile.php">แก้ไขโปรไฟล์</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="./../../moodle/login/logout.php">ออกจากระบบ</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsmenu"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <!--content-->
+    <div id="B_learn ">
+        <div class="aboutus-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="aboutus">
+                            <h2 class="aboutus-title">เกี่ยวกับเรา</h2>
+                            <p class="aboutus-text" style="font-size: 20px ; font-weight:bold">วัตถุประสงค์</p>
+                            <p class="aboutus-text">1.&nbsp;เพื่อศึกษาและเรียนรู้การพัฒนาเว็บแอปพลิเคชันโดยใช้
+                                เอชทีเอ็มแอล (HTML) จาวา-สคริปต์ (JavaScript) พีเอชพี (PHP) และ มูเดิ้ล (Moodle
+                                Framework)</p>
+                            <p class="aboutus-text">2.&nbsp;เพื่อพัฒนาระบบการจัดการเรียนรู้ (LMS: Learning Management
+                                System) ที่มีการสอนภาษาซี (C Programming Language)
+                                โดยใช้คำอธิบายภาษาไทยในการสอน
+                                สำหรับการเรียนทางไกลผ่านเครือข่ายอินเตอร์เน็ตให้กับผู้ที่ขาดโอกาสทางการศึกษา
+                                ผู้ที่สนใจจะศึกษา
+                                และเยาวชนที่ไม่มีพื้นฐานได้มีโอกาสเรียนได้ศึกษาการเขียนโปรแกรมภาษาซี</p>
+                            <p class="aboutus-text">3.&nbsp;เพื่อสร้างเว็บแอปพลิเคชันที่สอนการเขียนโปรแกรมที่ง่ายต่อความเข้าใจ
+                                สามารถศึกษาได้ตลอดเวลา และมีเกมออนไลน์เป็นสื่อในการสอน</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="aboutus-banner">
+                            <img src="./picture/puzzle.png" alt="" style="width:85%;margin-top: 85%; margin-left: 40px;">
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <div class="feature-box">
+                                <div class="clearfix">
+                                    <div class="iconset">
+                                        <span class="glyphicon glyphicon-cog icon"></span>
+                                    </div>
+                                    <div class="feature-content">
+                                        <p style="font-size: 20px ; font-weight:bold">ผู้จัดทำ</p>
+                                        <p style="font-size: 17px ;" data-toggle="popover" title="รับผิดชอบ : การทำเซิร์ฟเวอร์และการจัดการ Moodle">นายสุริยะ
+                                            วิภาศินนท์ 57122519002</p>
+                                        <p style="font-size: 17px ;" data-toggle="popover" title="รับผิดชอบ : การทำหน้าเว็บแอปพลิเคชันและระบบฐานข้อมูล">นายสาวสุดาวรรณ
+                                            บุญเกิดวงษ์ 57122519019</p>
+                                        <p style="font-size: 17px ;" data-toggle="popover" title="รับผิดชอบ : การเรียนโดยใช้เกม">นายสาวโชติกา
+                                            ลิ่วลมไพศาล 57122519030</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-box">
+                                <div class="clearfix">
+                                    <div class="iconset">
+                                        <span class="glyphicon glyphicon-cog icon"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="feature-box">
+                                <div class="clearfix">
+                                    <div class="iconset">
+                                        <span class="glyphicon glyphicon-cog icon"></span>
+                                    </div>
+                                    <div class="feature-content">
+                                        <p style="font-size: 20px ; font-weight:bold">อาจารย์ที่ปรึกษาโครงงาน</p>
+                                        <p style="font-size: 17px ;">อาจารย์ธนภรณ์ พันธุปรีชารัตน์</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div id="D_navbar_footer">
+        <div class="fixed-bottom">
+            <nav class="navbar-footer" style="padding-top: 1%;">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <p class="title-widget">LEARNING PROGRAMMING</p>
+                        <a class="dataCclickreport" style="text-decoration: none ;">
+                            <i class="fa fa-angle-double-right"></i> เกี่ยวกับ </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 hidden-xs">
+                        <p class="title-widget">ติดต่อ</p>
+                        <div class="footerp">
+                            <p>
+                                <a>Email :</a>
+                                <a href="#" style="text-decoration: none ;">code4thailand.pl@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!--script-->
+    <script>
+        $(function () {
+            $('.dropdown-menu li').on('click', function (event) {
+                var $checkbox = $(this).find('.checkbox');
+                if (!$checkbox.length) {
+                    return;
+                }
+                var $input = $checkbox.find('input');
+                var $icon = $checkbox.find('span.glyphicon');
+                if ($input.is(':checked')) {
+                    $input.prop('checked', false);
+                    $icon.removeClass('glyphicon-check').addClass('glyphicon-unchecked')
+                } else {
+                    $input.prop('checked', true);
+                    $icon.removeClass('glyphicon-unchecked').addClass('glyphicon-check')
+                }
+                return false;
+            });
+        });
+
+        function myFunction() {
+            window.print();
+        }
+
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        //get แสดงบทเรียน หัวข้อ
+        $(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+                url: 'https://localhost:44384/api/values/' + UsId,
+                // url: 'http://35.240.168.120/api/api/values/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (data) {
+                    var j = data;
+                    var jsonString = JSON.stringify(j)
+                    JSON.stringify(jsonString);
+                    // alert("Success" + jsonString);
+                    //---------------------------------------Chapter-------------------------------
+                    $('#accordion-container').innerHTML = '';
+                    $(".dataCclick").click(function () {
+                        var UsId = getParameterByName('id');
+                        UsId = UsId == null ? 0 : UsId;
+                        var id = $(this).attr('val');
+                        var tpid = $(this).attr('tpid');
+                        window.location.href = '../php/test2.html?id=' + UsId
+                        $.ajax({
+                            type: 'get',
+                            url: 'https://localhost:44384/api/UpdateLogUser/' +
+                                txt,
+                            contentType: 'application/json; charset=utf-8',
+                            success: function (data) {
+                                if (data == 'Pass') {
+                                    $('.pcr' + data).attr('style', '');
+                                    $('.pc' + pcId).attr('style', '');
+                                    $('.CanNextPage').get(0).innerHTML = data;
+                                    var tpId = $('.NowTP').get(0).innerHTML;
+                                    $('.tpid' + tpId).attr('val', data);
+                                    $(AllTopic.get(NowP - 1)).attr('NowPt',
+                                        data);
+                                } else {
+                                    $('.pcr' + data).attr('style', '');
+                                    $('.pc' + pcId).attr('style', '');
+                                    $('.Nowpractices').get(0).innerHTML = data;
+                                    var tpId = $('.NowTP').get(0).innerHTML;
+                                    $('.tpid' + tpId).attr('val', data);
+                                    var NowP = parseInt($('#nowPage').get(0).innerHTML);
+                                }
+                            },
+                            error: function (data) {
+
+                            }
+                        });
+                    });
+
+                    var $items = $('.accordion-item');
+                    var x, y;
+                    for (x = 0, y = j.length; x < y; x++) {
+                        $items.eq(x).find('.accordion-content').slideUp(0);
+                    }
+                    $items.find('h3').click(function () {
+                        var $thisAcc = $(this).closest('.accordion-item'),
+                            $thisContents = $thisAcc.find('.accordion-content');
+
+                        if ($thisAcc.hasClass('active')) {
+                            $thisContents.stop().slideUp(150, function () {
+                                $thisAcc.removeClass('active');
+                            });
+                        } else {
+                            $thisContents.stop().slideDown(150, function () {
+                                $thisAcc.addClass('active');
+                            });
+                        }
+                    });
+                },
+                error: function (data) {
+                    alert("Error to get json");
+                }
+            });
+        });
+
+
+
+        $(".dataCclickreport").click(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            var id = $(this).attr('val');
+            var tpid = $(this).attr('tpid');
+            window.location.href = '../php/report.html?id=' + UsId
+
+
+            //get user
+            $(function () {
+                var UsId = getParameterByName('id');
+                UsId = UsId == null ? 0 : UsId;
+                $.ajax({
+                    type: 'get',
+                    url: 'https://localhost:44384/api/GetUserByID/' + UsId,
+                    //url: 'http://35.240.168.120/api/api/GetUserByID/' + UsId,
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data == '') {
+                            alert("ไม่พบผู้ใช้งาน");
+                        } else {
+                            $('.FullUserName').get(0).innerHTML = data;
+                        }
+                    },
+                    error: function (data) {
+                        alert("ไม่พบผู้ใช้งาน");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

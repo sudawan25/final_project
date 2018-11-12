@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/learn.css">
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <!--script-js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Report</title>
+
+</head>
+<style>
+    #D_navbar_footer,
+        {
+        position: absolute;
+    }
+
+    #A_navbar_top {
+        top: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    #B_learn {
+        top: 59px;
+        width: 100%;
+        bottom: 100px;
+    }
+
+    #D_navbar_footer {
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+    .form-check.disabled{
+        width: 100%;
+    }
+    .form-check{
+        width: 100%;
+    }
+    table{
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <!--Navbar-->
+        <div id="A_navbar_top">
+            <div class="sticky-top" style="width: 100%">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="width: 100%">
+                    <div class="col-md-8" style="margin-left: 3%;">
+                        <a class="navbar-brand" href="#">
+                            <img src="./picture/programming.png" alt="programming Language" class="logo">
+                        </a>
+                    </div>
+
+                    <div class="col-md-4" style="margin-left: 0%;">
+                        <div class="collapse navbar-collapse" id="navbarsmenu">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./../../moodle/my/index.php">หน้าแรก
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link FullUserName" href="#">
+                                        User
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="https://example.com" id="menu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="menu">
+                                        <a class="dropdown-item" href="./../../moodle/my/index.php">วิชาเรียนทั้งหมด</a>
+                                        <a class="dropdown-item" href="./../../moodle/user/profile.php">แก้ไขโปรไฟล์</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="./../../moodle/login/logout.php">ออกจากระบบ</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsmenu"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+
+            </div>
+        </div>
+
+        <!--Content-->
+        <div id="B_learn">
+            <div class="scrollbar" id="style-default">
+                <div class="course_detail_box">
+                    <div id="learn">
+                        <div class="force-overflow">
+                            <div class="row" style="margin-bottom: 3%;">
+                                <div class="col-md-12" style="text-align:right">
+                                    <button onclick="myFunction()"><i class="fa fa-print"><span style="font-family: 'Athiti', sans-serif;">
+                                                Print</span></i> </button>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 3%;">
+                                <table style="width:40%">
+                                    <tr>
+                                        <th>
+                                            <div class="form-check disabled">
+                                                <input type="radio" id="name" name="my_radio" value="name" onclick="checkreport_student()">
+                                                <label for="name"><span>ข้อมูลผู้เรียน</span></label>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-check disabled">
+                                                <input type="radio" id="log_learn" name="my_radio" value="log_learn"
+                                                    onclick="checkreport()">
+                                                <label for="log_learn"><span>ประวัติการเรียน</span></label>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                            <div class="row" style="margin-bottom: 2%;">
+                                <div class="col-md-10">
+                                </div>
+                                <div class="col-md-2">
+                                    <div> <span style="font-weight:bold">ชื่อผู้ใช้ : </span></div> <span>
+                                        <div class="FullUserName1"> user</div>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div id="log_learn_show"> </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div id="D_navbar_footer">
+            <div class="fixed-bottom">
+                <nav class="navbar-footer" style="padding-top: 1%;">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <p class="title-widget">LEARNING PROGRAMMING</p>
+                            <a class="dataCclickabout " style="color:blue;text-decoration: none;cursor: pointer;">
+                                <i class="fa fa-angle-double-right"></i> เกี่ยวกับ </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 hidden-xs">
+                            <p class="title-widget">ติดต่อ</p>
+                            <div class="footerp">
+                                <p>
+                                    <a>Email :</a>
+                                    <a href="#" style="text-decoration: none ;">code4thailand.pl@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--script-->
+    <script>
+        $(function () {
+            $('.dropdown-menu li').on('click', function (event) {
+                var $checkbox = $(this).find('.checkbox');
+                if (!$checkbox.length) {
+                    return;
+                }
+                var $input = $checkbox.find('input');
+                var $icon = $checkbox.find('span.glyphicon');
+                if ($input.is(':checked')) {
+                    $input.prop('checked', false);
+                    $icon.removeClass('glyphicon-check').addClass('glyphicon-unchecked')
+                } else {
+                    $input.prop('checked', true);
+                    $icon.removeClass('glyphicon-unchecked').addClass('glyphicon-check')
+                }
+                return false;
+            });
+        });
+
+        function myFunction() {
+            window.print();
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+
+
+        $(".dataCclickabout").click(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            var id = $(this).attr('val');
+            window.location.href = '../php/about.html?id=' + UsId
+        });
+
+
+        $(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+               // url: 'http://35.240.168.120/api/api/GetUserByID/' + UsId,
+                 url: 'https://localhost:44384/api/GetUserByID/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data == '') {
+                        alert("ไม่พบผู้ใช้งาน");
+                    } else {
+                        $('.FullUserName').get(0).innerHTML = data;
+                        $('.FullUserName1').get(0).innerHTML = data;
+                    }
+                },
+                error: function (data) {
+                    alert("ไม่พบผู้ใช้งาน");
+                }
+            });
+        });
+
+
+
+        function checkreport() {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+               // url: 'http://35.240.168.120/api/api/report/' + UsId,
+               url: 'https://localhost:44384/api/report/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var j = data;
+                    var jsonString = JSON.stringify(j)
+                    JSON.stringify(jsonString);
+                    var str =
+                        "<table class='table table-striped' style='width:100%;font-size:16px;cursor:pointer;'> " +
+                        '<tr>' + '<th>ชื่อบทเรียน</th>' + '<th>สถานะ</th>' + '<th>ชื่อผู้เรียน</th>' +
+                        '<th>วันที่เรียน</th>' + '</tr>';
+                    for (var i = 0; i < j.length; i++) {
+
+
+                        var log_learn = '<tr>' + '<th>' + j[i].topic_name + '</th>' + '<th>' + j[i].type +
+                            '</th>' + '<th>' + j[i].fullName + '</th>' + '<th>' + j[i].createDate + '</th>' +
+                            '</tr>';
+                        str += log_learn;
+                    }
+                    str += '</table>';
+                    //alert('success' + 'Checked already!');
+                    // $('#log_learn_show').append(log_learn);
+                    $('#log_learn_show').get(0).innerHTML = str;
+                },
+                error: function (data) {
+                    alert("false");
+                }
+            });
+        }
+
+
+        function checkreport_student() {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+                //url: 'http://35.240.168.120/api/api/report_student_detail/' + UsId,
+                  url: 'https://localhost:44384/api/report/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var j = data;
+                    var jsonString = JSON.stringify(j)
+                    JSON.stringify(jsonString);
+                    var str =
+                        "<table class='table table-striped' style='width:100%;font-size:16px;cursor:pointer;'> " +
+                        '<tr>' + '<th>Username</th>' + '<th>ชื่อผู้เรียน</th>' + '<th>Email</th>' + '</tr>';
+                    for (var i = 0; i < j.length; i++) {
+
+
+                        var log_learn = '<tr>' + '<th>' + j[i].username + '</th>' + '<th>' + j[i].fullName +
+                            '</th>' + '<th>' + j[i].email + '</th>' + '</tr>';
+                        str += log_learn;
+                    }
+                    str += '</table>';
+                    //alert('success' + 'Checked already!');
+                    // $('#log_learn_show').append(log_learn);
+                    $('#log_learn_show').get(0).innerHTML = str;
+                },
+                error: function (data) {
+                    alert("false");
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

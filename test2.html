@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/learn.css">
+    <link rel="stylesheet" href="./css//checkbox.css">
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <!--script-js-->
+    <!-- <script src="./js/vendor/modernizr-2.8.3.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Codemirror-->
+    <!-- <link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="./codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="./codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="./codemirror/hint/show-hint.css">
+
+    <script src="./codemirror/lib/codemirror.js"></script>
+    <script src="./codemirror/mode/clike/clike.js"></script>
+    <script src="./codemirror/mode/css/css.js"></script>
+    <script src="./codemirror/hint/show-hint.js"></script>
+    <script src="./codemirror/hint/css-hint.js"></script>-->
+
+    <!--code-prettify-->
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link href="./code-prettify-master/styles/desert.css" rel="stylesheet">
+
+    <title>learn_code_output</title>
+
+</head>
+<style>
+    #B_learn,
+    #D_navbar_footer,
+    #B_output,
+    #B_1_code {
+        position: absolute;
+    }
+
+    #A_navbar_top {
+        top: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    #B_learn {
+        top: 59px;
+        width: 33.33%;
+        bottom: 52px;
+    }
+
+    .b1_learn {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        bottom: 0;
+    }
+
+    #B_1_code {
+        top: 59px;
+        width: 33.33%;
+        bottom: 52px;
+        margin-left: 33.33%
+    }
+
+    .b_1_code {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        bottom: 0;
+        background: white;
+        padding-left: 17px;
+    }
+
+    #B_output {
+        top: 59px;
+        width: 33.33%;
+        bottom: 52px;
+        margin-left: 66.66%;
+    }
+
+    .b_output {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        bottom: 0;
+    }
+
+
+    #D_navbar_footer {
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    .row {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .tab_run {
+        bottom: 0;
+        width: 100%;
+        height: 39px;
+        margin-left: 0;
+        padding-top: 2px;
+    }
+
+    .btn-primary {
+        border-color: transparent;
+        background-color: #4b35ef;
+    }
+
+
+</style>
+
+<body>
+    <div id="container">
+        <!--Navbar-->
+        <div style="display:none;" class="NowCp"></div>
+        <div style="display:none;" class="NowTP"></div>
+        <div style="display:none;" class="Nowpractices"></div>
+        <div style="display:none;" class="CanNextPage">Fail</div>
+        <div id="A_navbar_top">
+            <div class="sticky-top" style="width: 100%">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="width: 100%">
+                    <div class="col-md-8" style="margin-left: 3%;">
+                        <a class="navbar-brand" href="#">
+                            <img src="./picture/programming.png" alt="programming Language" class="logo">
+                        </a>
+                    </div>
+
+                    <div class="col-md-4" style="margin-left: 0%;">
+                        <div class="collapse navbar-collapse" id="navbarsmenu">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./../../moodle/my/index.php">หน้าแรก
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item active">
+                                    <a class="nav-link FullUserName" href="#">
+                                        User
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="https://example.com" id="menu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="menu">
+                                        <a class="dropdown-item" href="./../../moodle/index.php">วิชาเรียนทั้งหมด</a>
+                                        <a class="dropdown-item BtnGotoReport" class="dataCclickreport">รายงาน</a>
+                                        <a class="dropdown-item" href="./../../moodle/user/profile.php">แก้ไขโปรไฟล์</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="./../../moodle/login/logout.php">ออกจากระบบ</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsmenu"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+
+            </div>
+        </div>
+
+        <!--Learn-->
+        <div id="B_learn">
+            <div class="b1_learn">
+                <div id="learn">
+                    <div class="scrollbar" id="style-default">
+                        <div class="force-overflow">
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                เนื้อหา
+
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <!-- <div id="namechapcontent"></div>-->
+                                            <div id="topic" style="font-weight: bolder;padding-left: 0px;font-size: 20px">
+                                            </div>
+                                            <div id="content_chapter" style="margin: 10px 15px 6px 15px;"></div>
+                                            <div id="test"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                ตัวอย่างโค้ด
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div>
+
+
+                                                <div id="examcode_teach"></div>
+                                                <div id="persent_score_position"> </div>
+
+
+                                                <!--<div id="codeeditor"></div>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <div class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                แบบทดสอบ
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div id="practice_content" style="padding-left:10px"></div>
+                                                <div id="practice_content_test" style="padding-left:10px"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Code-->
+        <div id="B_1_code">
+            <div class="b_1_code">
+                <div id="code">
+                    <!--<form action="./compiler/language c.php" id="form" name="f2" method="POST">-->
+                    <form action="./compile.php" id="form" name="f2" method="POST">
+                        <label for="ta">เขียนโค้ดตรงส่วนนี้</label>
+                        <textarea class="form-control" name="code" style="resize: none;height: 50vh;font-family: 'Courier New', Courier, monospace" id="code_input">
+
+                        </textarea>
+                        <label for="in">ใส่ค่า (input) ให้กับโค้ด</label>
+                        <textarea class="form-control" name="input" style="resize: none;height: 12vh;"></textarea>
+
+                        <div class="tab_run">
+                            <input type="submit" id="run" class="btn btn-primary" value="Run Code"  style="float: left;">
+                            <input type="button" id="clear" value="Clear" class="btn btn-primary" style="float: right;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Output-->
+        <div id="B_output">
+            <div class="b_output">
+                <div id="output">
+                    <div div class="row">
+                        <div class="output_box">
+                            <label for="out">ผลลัพธ์ (Output) จะแสดงที่นี่</label>
+                            <textarea readonly id="output_box_1" class="form-control" name="output" style="resize:none;height: 75vh;">
+                            </textarea>
+                        </div>
+                        <!--<div class="row">
+                            <label for="answer" style="float: left;">ส่งคำตอบ</label>
+                            <input type="text" id="answer_ans" style="width: 66%;text-align: center;align-items: center;margin-right: 2%;height: 90%;"
+                                class="form-control">
+                            <div>
+                                <input type="submit" id="send_ans" class="btn btn-primary" value="send" style="float: right;margin-left: 1%" onclick="clicked()">
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div id="D_navbar_footer">
+            <div class="fixed-bottom">
+                <nav class="navbar-footer" style="padding-top: 0.3%;">
+                    <div class="row">
+                        <div class="col-md-2 chapter">
+                            <div id="mySidenav" class="sidenav" style="width: 250px;">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <ul style="width: 100%;padding-left: 10%;cursor: pointer;" id="chapters"></ul>
+                            </div>
+
+                            <div id="main">
+                                <button type="button" class="btn btn-outline-light" style="margin-left: 5px">
+                                    <span onclick="openNav()">&#9776; หัวข้อ</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 page">
+                            <button type="button" class="btn btn-outline-light" onclick="PrevPage()" style="margin-right: 5%">ย้อนกลับ</button>
+                            </span>
+                            <span style="display: inline-block; color: white">
+                                <p class="showpage"><span id="nowPage">X</span>/<span id="maxPage">XX</span></p>
+                            </span>
+                            <button type="button" class="btn btn-outline-light" onclick="NextPage()" style="margin-left: 5%">ถัดไป</button>
+                        </div>
+                        <div class="col-md-2 " style="text-align: right;margin-left: -5px;position: relative;">
+                            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#myModal">ตัวช่วย</button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modelTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modelTitle">คำแนะนำ</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                เริ่มต้นบทเรียนอีกครั้ง
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ตกลง</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--script-->
+    <script>
+        //side bar
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+
+        function PrevPage() {
+            var NowP = parseInt($('#nowPage').get(0).innerHTML);
+            var MaxP = parseInt($('#maxPage').get(0).innerHTML);
+            if (NowP > 1) {
+                $('#nowPage').get(0).innerHTML = (NowP - 1);
+            }
+            $('.CanNextPage').get(0).innerHTML = "Pass";
+            ShowNowPage(1);
+        }
+
+        function NextPage() {
+            if($('.CanNextPage').get(0).innerHTML == "Pass"){
+                $('.CanNextPage').get(0).innerHTML = "Fail";
+                var NowP = parseInt($('#nowPage').get(0).innerHTML);
+                var MaxP = parseInt($('#maxPage').get(0).innerHTML);
+                if (NowP < MaxP) {
+                    $('#nowPage').get(0).innerHTML = (NowP + 1);
+                }
+                ShowNowPage(2);
+            }
+            else {
+                alert('กรุณาทำแบบทดสอบ');
+            }
+        }
+
+        function ShowNowPage(Ty) {
+            var NowP = parseInt($('#nowPage').get(0).innerHTML);
+
+            var AllTopic = $('.topicText');
+            var AllContent = $('.contentText');
+            for (var i = 0; i < AllTopic.length; i++) {
+                if ((NowP - 1) == i) {
+                    $(AllTopic.get(i)).attr('style', '');
+                    $(AllContent.get(i)).attr('style', '');
+                    var val = $(AllTopic.get(i)).attr('val');
+
+                    $('#examcode_teach div[class="Example' + val + '"]').attr('style', '');
+                    var UsId = getParameterByName('id');
+                    UsId = UsId == null ? 0 : UsId;
+                    var tpId = $(AllTopic.get(NowP - 1)).attr('val');
+                    var CpId = $(AllTopic.get(NowP - 1)).attr('CpID');
+                    var NowPt = $(AllTopic.get(NowP - 1)).attr('NowPt');
+                    $('.NowTP').get(0).innerHTML =  tpId;
+                    $('.rowtpid').attr('style','display:none');
+                    $('.tpid' + tpId).attr('style','');
+                    if(Ty == 2){
+                        $('.Nowpractices').get(0).innerHTML =  NowPt;
+                        $('.CanNextPage').get(0).innerHTML  =  NowPt;
+                    }
+                    var txt = UsId + '-' + CpId + '-' + tpId + '-READ';
+                    $.ajax({
+                        type: 'get',
+                        url: 'https://localhost:44384/api/UpdateLogUser/' + txt,
+                       // url: 'http://35.240.168.120/api/api/UpdateLogUser/' + txt,
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                } else {
+                    $(AllTopic.get(i)).attr('style', 'display:none;');
+                    $(AllContent.get(i)).attr('style', 'display:none;');
+                    var val = $(AllTopic.get(i)).attr('val');
+                    $('#examcode_teach div[class="Example' + val + '"]').attr('style', 'display:none;');
+                }
+
+                PR.prettyPrint()
+
+            }
+           /* if((NowP - 1) == (AllTopic.length-1)){
+                    var UsId = getParameterByName('id');
+                    UsId = UsId == null ? 0 : UsId;
+                    var tpId = $(AllTopic.get(NowP - 1)).attr('val');
+                    var CpId = $(AllTopic.get(NowP - 1)).attr('CpID');
+                    var DataSend = { iduser: UsId,
+                            topic_id :tpId,
+                            chapter_id :CpId,
+                            TYPE: 'READ',};
+                    var txt = UsId + '-' + tpId + '-' + CpId + '-READ';
+                    $.ajax({
+                        type: 'get',
+                        url: 'https://localhost:44384/api/UpdateLogUser/' + txt,
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                }*/
+        }
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        $(".BtnGotoReport").click(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            window.location.href = '../php/report.html?id=' + UsId
+        });
+
+
+        //get บทเรียน
+        $(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+                url: 'https://localhost:44384/api/values/' + UsId,
+                //url: 'http://35.240.168.120/api/api/values/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (data) {
+                    var j = data;
+                    var jsonString = JSON.stringify(j)
+                    JSON.stringify(jsonString);
+                    $('#chapters').get(0).innerHTML = "";
+                    // alert("Success" + jsonString);
+                    //---------------------------------------Chapter-------------------------------
+                    for (var i = 0; i < j.length; i++) {
+                        var namechapter = "<li><a class='dataCclick' val='" + j[i].chapter_id +"'>" + j[i].chapter_name + "</a></li>";
+                        $('#chapters').append(namechapter);
+                    }
+                    var cpId = getParameterByName('cp');
+                    var tpIdReq = getParameterByName('tp');
+                    if(cpId != null && cpId != ""){
+                        $('.NowCp').get(0).innerHTML = cpId;
+                        $.getJSON("https://localhost:44384/api/chapter/" + cpId + ',' + UsId, function (
+                            data) {
+                            var a = data;
+                            var jsonStringa = JSON.stringify(a);
+                            JSON.stringify(jsonStringa);
+                            //---------------------------------------content+code+practice-------------------------------
+                            for (var z = 0; z < a.length; z++) {
+                                var strCone = "<a>" + a[z].chapter_name +"</a><br/>";
+                                var str = '';
+                                var GotoPageNumber = 1;
+                                $('#nowPage').get(0).innerHTML = '1';
+                                $('#maxPage').get(0).innerHTML = a[z].topic.length;
+                                $('#examcode_teach').get(0).innerHTML = '';
+                                $('#practice_content').get(0).innerHTML = '';
+                                text = '';
+                                text += "<ul>";
+                                for (var x = 0; x < a[z].topic.length; x++) {
+                                    if(x == 0 && z==0) {
+                                        $('.NowTP').get(0).innerHTML = a[z].topic[x].topic_id;
+                                        $('.Nowpractices').get(0).innerHTML = a[z].topic[x].nowpractices;
+                                        if(a[z].topic[x].nowpractices == "Pass")
+                                            $('.CanNextPage').get(0).innerHTML = a[z].topic[x].nowpractices;
+                                    }
+                                    if(tpIdReq == a[z].topic[x].topic_id){
+                                        GotoPageNumber = x ;
+                                    }
+                                    var topic = "<a class='topicText' " + (x == 0 ? "" : "style='display:none;'") +
+                                        " val='" + a[z].topic[x].topic_id + "' CpID='" + cpId + "' NowPt='" + a[z].topic[x].nowpractices +"'>" + a[z].topic[x].topic_id + ':' +
+                                        a[z].topic[x].topic_name +"</a>"
+                                    var content = "<div class='contentText' " + (x ==0 ? "" : "style='display:none;'") + ">" +
+                                        a[z].topic[x].topic_content + "</div>"
+                                    strCone += topic;
+                                    str += content;
+                                    var ExamDiv = document.createElement("div");
+                                    ExamDiv.className = "Example" + a[z].topic[x].topic_id;
+                                    if (x != 0)
+                                        ExamDiv.style = 'display:none;';
+                                    for (var c = 0; c < a[z].topic[x].examcodes.length; c++) {
+
+                                        var ExamC = document.createElement("pre");
+                                        ExamC.className = "prettyprint lang-c";
+                                        var ExamCC = document.createElement("code");
+                                        ExamCC.className = "language-c";
+                                        ExamCC.innerText = a[z].topic[x].examcodes[c].exam_content;
+                                        ExamC.append(ExamCC);
+                                        ExamDiv.append(ExamC);
+                                    }
+                                    document.getElementById('examcode_teach').append(ExamDiv);
+                                    // $('#examcode_teach').get(0).innerHTML += examcode;
+
+                                    for (var y = 0; y < a[z].topic[x].practices.length; y++) {
+                                        // ขึ้นบรรทัดใหม่เวลาเจอ string
+                                        var textShow = '';
+                                        var sprtext = a[z].topic[x].practices[y].practice_content
+                                            .split('ตัวอย่าง');
+                                        if (sprtext.length == 2) {
+                                            textShow = sprtext[0];
+                                            textShow +=
+                                                "<br /><span style='font-weight:bold' >ตัวอย่าง</span><br />";
+                                            textShow += sprtext[1];
+                                        } else {
+                                            textShow = a[z].topic[x].practices[y].practice_content;
+                                        }
+                                        var FlagShowData = false;
+                                        text +=
+                                            "<div class='rowtpid tpid" + a[z].topic[x].topic_id + "' val='" + a[z].topic[x].nowpractices + "' style='" +  (x == 0 ? "" : "display:none") + "'><div class='row  pcr" +a[z].topic[x].practices[y].practice_id + "' " + (a[z].topic[x].practices[y].practice_id <= a[z].topic[x].nowpractices || a[z].topic[x].nowpractices == "Pass" ? "" : "style='opacity:0.5'")
+                                                + "><span>" +
+                                            "<label class='label'>" +
+                                            "<input class='label__checkbox' type='checkbox' checked='checked' id='check'>" +
+                                            "<span class='label__text' >" +
+                                            "<span class='label__check pc" + a[z].topic[x].practices[y].practice_id + "' " + (a[z].topic[x].practices[y].practice_id < a[z].topic[x].nowpractices || a[z].topic[x].nowpractices == "Pass"  ? "" : "style='display:none;'") +">" +
+                                            "<i class='fa fa-check icon ColorIconCheck" +
+                                            y + "' ></i>" +
+                                            "</span>" +
+                                            "<span class='label__check' style='display:none;'>" +
+                                            "<i class='fa fa-times icon ColorIconCheckCross" +
+                                            y + "'>" +
+                                            "</i>" + "</span>" + "</span>" + "</label>" +
+                                            "</span>" +
+                                            "<li style='list-style-type: decimal;' > " +
+                                            '<span>' + textShow +
+                                            '</span>' +
+                                            "</li>" + '</div></div>';
+                                    }
+                                }
+                                text += "</ul>";
+                                $('#practice_content').append(text);
+                                PR.prettyPrint();
+                                $('#topic').get(0).innerHTML = strCone;
+                                $('#content_chapter').get(0).innerHTML = str;
+                                }
+                                ShowNowPage(1);
+                                for(var k = 0 ; k < GotoPageNumber;k++){
+                                    NextPage()
+                                }
+                        });
+                    }
+                    $(".dataCclick").click(function () {
+                        var id = $(this).attr('val');
+                        $('.NowCp').get(0).innerHTML = id;
+                        $.getJSON("https://localhost:44384/api/chapter/" + id + ',' + UsId, function (
+                            data) {
+
+                            var a = data;
+                            var jsonStringa = JSON.stringify(a);
+                            JSON.stringify(jsonStringa);
+                            // alert(jsonStringa);
+                            //---------------------------------------content+code+practice-------------------------------
+                            for (var z = 0; z < a.length; z++) {
+                                var strCone = "<a>" + a[z].chapter_name +"</a><br/>";
+                                var str = '';
+                                $('#nowPage').get(0).innerHTML = '1';
+                                $('#maxPage').get(0).innerHTML = a[z].topic.length;
+                                $('#examcode_teach').get(0).innerHTML = '';
+                                $('#practice_content').get(0).innerHTML = '';
+                                text = '';
+                                text += "<ul>";
+                                for (var x = 0; x < a[z].topic.length; x++) {
+                                    if(x == 0 && z==0) {
+                                        $('.NowTP').get(0).innerHTML = a[z].topic[x].topic_id;
+                                        $('.Nowpractices').get(0).innerHTML = a[z].topic[x].nowpractices;
+                                        if(a[z].topic[x].nowpractices == "Pass")
+                                            $('.CanNextPage').get(0).innerHTML = a[z].topic[x].nowpractices;
+                                    }
+                                    var topic = "<a class='topicText' " + (x == 0 ? "" : "style='display:none;'") +
+                                        " val='" + a[z].topic[x].topic_id + "' CpID='" + cpId + "' NowPt='" + a[z].topic[x].nowpractices +"'>" + a[z].topic[x].topic_id + ':' +
+                                        a[z].topic[x].topic_name +"</a>"
+                                    var content = "<div class='contentText' " + (x ==0 ? "" : "style='display:none;'") + ">" +
+                                        a[z].topic[x].topic_content + "</div>"
+                                    str += content;
+                                    var ExamDiv = document.createElement("div");
+                                    ExamDiv.className = "Example" + a[z].topic[x].topic_id;
+                                    if (x != 0)
+                                        ExamDiv.style = 'display:none;';
+                                    for (var c = 0; c < a[z].topic[x].examcodes.length; c++) {
+                                        var ExamC = document.createElement("pre");
+                                        ExamC.className = "prettyprint lang-c";
+                                        var ExamCC = document.createElement("code");
+                                        ExamCC.className = "language-c";
+                                        ExamCC.innerText = a[z].topic[x].examcodes[c].exam_content;
+                                        ExamC.append(ExamCC);
+                                        ExamDiv.append(ExamC);
+                                    }
+                                    document.getElementById('examcode_teach').append(ExamDiv);
+                                    for (var y = 0; y < a[z].topic[x].practices.length; y++) {
+                                        // ขึ้นบรรทัดใหม่เวลาเจอ string
+                                        var textShow = '';
+                                        var sprtext = a[z].topic[x].practices[y].practice_content
+                                            .split('ตัวอย่าง');
+                                        if (sprtext.length == 2) {
+                                            textShow = sprtext[0];
+                                            textShow +=
+                                                "<br /><span style='font-weight:bold' >ตัวอย่าง</span><br />";
+                                            textShow += sprtext[1];
+                                        } else {
+                                            textShow = a[z].topic[x].practices[y].practice_content;
+                                        }
+                                        var FlagShowData = false;
+                                        text +=
+                                            "<div class='rowtpid tpid" + a[z].topic[x].topic_id + "' val='" + a[z].topic[x].nowpractices + "' style='" +  (x == 0 ? "" : "display:none") + "'><div class='row  pcr" +a[z].topic[x].practices[y].practice_id + "' " + (a[z].topic[x].practices[y].practice_id <= a[z].topic[x].nowpractices || a[z].topic[x].nowpractices == "Pass" ? "" : "style='opacity:0.5'")
+                                                + "><span>" +
+                                            "<label class='label'>" +
+                                            "<input class='label__checkbox' type='checkbox' checked='checked' id='check'>" +
+                                            "<span class='label__text' >" +
+                                            "<span class='label__check pc" + a[z].topic[x].practices[y].practice_id + "' " + (a[z].topic[x].practices[y].practice_id < a[z].topic[x].nowpractices || a[z].topic[x].nowpractices == "Pass"  ? "" : "style='display:none;'") +">" +
+                                            "<i class='fa fa-check icon ColorIconCheck" +
+                                            y + "' ></i>" +
+                                            "</span>" +
+                                            "<span class='label__check' style='display:none;'>" +
+                                            "<i class='fa fa-times icon ColorIconCheckCross" +
+                                            y + "'>" +
+                                            "</i>" + "</span>" + "</span>" + "</label>" +
+                                            "</span>" +
+                                            "<li style='list-style-type: decimal;' > " +
+                                            '<span>' + textShow +
+                                            '</span>' +
+                                            "</li>" + '</div></div>';
+                                    }
+                                }
+                                text += "</ul>";
+                                $('#practice_content').append(text);
+                                PR.prettyPrint();
+                                $('#topic').get(0).innerHTML = strCone;
+                                $('#content_chapter').get(0).innerHTML = str;
+                            }
+                            ShowNowPage(1);
+                        });
+                    });
+                },
+                error: function (data) {
+                    alert("Error to get json");
+                }
+            });
+        });
+
+(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+                url: 'https://localhost:44384/api/api/values/' + UsId,
+               // url: 'http://35.240.168.120/api/api/values/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (data) {
+                    var j = data;
+                    var jsonString = JSON.stringify(j)
+                    JSON.stringify(jsonString);
+                    // alert("Success" + jsonString);
+                    //---------------------------------------Chapter-------------------------------
+                    $('#accordion-container').innerHTML = '';
+                    var resultsStr = '';
+                    for (var i = 0; i < j.length; i++) {
+                        resultsStr += '<div class="accordion-item">' +
+                            '<h3>' + ' ' + "บทที่" + ":" + (i + 1) + '</h3>' +
+                            '<div class="accordion-content">' +
+                            "<table class='dataCclick' val='" + j[i].chapter_id + "' " +
+                            ' style="width:100%;font-size:18px;cursor:pointer;">' + '<tr>' +
+                            '<th style="padding-left:50px">' +
+                            j[i].chapter_name + '</th>' + '<th style="text-align:end;">' + j[i].persent +
+                            '%</th>' + '</tr>' + '</table>' +
+                            '</div>' +
+                            '</div>';
+
+                    }
+                    $('#accordion-container').html(resultsStr);
+                    $(".dataCclick").click(function () {
+                        var UsId = getParameterByName('id');
+                        UsId = UsId == null ? 0 : UsId;
+                        var id = $(this).attr('val');
+                        window.location.href = '../php/test2.html?id=' + UsId + '&cp=' + id
+                    });
+
+                     $(".dataCclickreport").click(function () {
+                        var UsId = getParameterByName('id');
+                        UsId = UsId == null ? 0 : UsId;
+                        var id = $(this).attr('val');
+                        window.location.href = '../php/report.html?id=' + UsId
+                    });
+
+                    var $items = $('.accordion-item');
+                    var x, y;
+                    for (x = 0, y = j.length; x < y; x++) {
+                        $items.eq(x).find('.accordion-content').slideUp(0);
+                    }
+                    $items.find('h3').click(function () {
+                        var $thisAcc = $(this).closest('.accordion-item'),
+                            $thisContents = $thisAcc.find('.accordion-content');
+
+                        if ($thisAcc.hasClass('active')) {
+                            $thisContents.stop().slideUp(150, function () {
+                                $thisAcc.removeClass('active');
+                            });
+                        } else {
+                            $thisContents.stop().slideDown(150, function () {
+                                $thisAcc.addClass('active');
+                            });
+                        }
+                    });
+                },
+                error: function (data) {
+                    alert("Error to get json");
+                }
+            });
+        });
+        $(function () {
+            var UsId = getParameterByName('id');
+            UsId = UsId == null ? 0 : UsId;
+            $.ajax({
+                type: 'get',
+                url: 'https://localhost:44384/api/GetUserByID/' + UsId,
+                //url: 'http://35.240.168.120/api/api/GetUserByID/' + UsId,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if(data == ''){
+                        alert("ไม่พบผู้ใช้งาน");
+                    }
+                    else {
+                        $('.FullUserName').get(0).innerHTML = data;
+                    }
+                },
+                error: function (data) {
+                    alert("ไม่พบผู้ใช้งาน");
+                }
+            });
+        });
+
+
+        /*
+        $(function () {
+
+            $.ajax({
+                type: 'get',
+                url: 'https://localhost:44384/api/checkanswer' ,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if(data == ''){
+                        alert("ไม่พบผู้ใช้งาน");
+                    }
+                    else {
+                        $('.FullUserName').get(0).innerHTML = data;
+                    }
+                },
+                error: function (data) {
+                    alert("ไม่พบผู้ใช้งาน");
+                }
+            });
+        });*/
+        //--------------------------------------------------------------------------------------------------------------//
+        //run code
+        $(document).ready(function () {
+
+            $("#run").click(function () {
+
+                $("#output_box_1").html("Loading......");
+
+            });
+        });
+        String.prototype.replaceAll = function (search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
+        };
+        String.prototype.replaceAll = function (search, replacement) {
+            var target = this;
+            return target.split(search).join(replacement);
+        };
+
+        function semantic() {
+            var input_value = $('#code_input').get(0).value;
+            input_value = input_value.replace(/(\r\n\t|\n|\r\t)/gm, "")
+            input_value = input_value.replaceAll('\\n', '');
+            input_value = input_value.replaceAll(' ', '');
+            input_value =  input_value.replaceAll('	', '');
+            input_value =  input_value.replace(/'/g,'');
+            var pcId = $('.Nowpractices').get(0).innerHTML;
+            $.ajax({
+                    type: 'get',
+                    url: 'https://localhost:44384/api/Practice/' + pcId,
+                   // url: 'http://35.240.168.120/api/api/Practice/' + pcId,
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        //alert(data);
+                        var textCheck = data;
+
+                        var FG = false;
+                        for (var i = 0; i < textCheck.length; i++) {
+                            if (input_value == textCheck[i].practice_answer && textCheck[i].practice_id == pcId) {
+                                FG = true;
+                            }
+                        }
+                        if (FG) {
+                            alert('ทำแบบทดสอบถูกต้อง');
+                            var UsId = getParameterByName('id');
+                            UsId = UsId == null ? 0 : UsId;
+                            var TpId =$('.NowTP').get(0).innerHTML
+
+                            var txt = UsId + '-' + pcId + '-' + TpId + '-PASS';
+                            $.ajax({
+                                type: 'get',
+                                url: 'https://localhost:44384/api/UpdateLogUser/' + txt,
+                              //  url: 'http://35.240.168.120/api/api/UpdateLogUser/' + txt,
+                                contentType: 'application/json; charset=utf-8',
+                                success: function (data) {
+                                    if(data == 'Pass') {
+                                        $('.pcr' + data).attr('style','');
+                                        $('.pc' + pcId).attr('style','');
+                                        $('.CanNextPage').get(0).innerHTML = data;
+                                        var tpId = $('.NowTP').get(0).innerHTML;
+                                        $('.tpid' + tpId).attr('val',data);
+                                        $(AllTopic.get(NowP - 1)).attr('NowPt' , data);
+                                    }
+                                    else {
+                                        $('.pcr' + data).attr('style','');
+                                        $('.pc' + pcId).attr('style','');
+                                        $('.Nowpractices').get(0).innerHTML = data;
+                                        var tpId = $('.NowTP').get(0).innerHTML;
+                                        $('.tpid' + tpId).attr('val',data);
+                                        var NowP = parseInt($('#nowPage').get(0).innerHTML);
+                                    }
+                                },
+                                error: function (data) {
+
+                                }
+                            });
+
+                        } else {
+                            alert('ทำแบบทดสอบผิดนะ ลองดูโจทย์อีกครั้ง');
+                        }
+                    },
+                    error: function (data) {
+
+                    }
+                });
+
+
+        }
+
+
+        //wait for page load to initialize script
+        $(document).ready(function () {
+            //listen for form submission
+            $('form').on('submit', function (e) {
+                //prevent form from submitting and leaving page
+                e.preventDefault();
+                // AJAX
+                $.ajax({
+                    type: "POST", //type of submit
+                    cache: false, //important or else you might get wrong data returned to you
+                    url: "./compiler/c.php", //destination
+                    datatype: "html", //expected data format from process.php
+                    data: $('form').serialize(), //target your form's data and serialize for a POST
+                    success: function (result) { // data is the var which holds the output of your process.php
+                        //alert(result);
+                        // locate the div with #result and fill it with returned data from process.php
+                        $('#output_box_1').html(result);
+                        semantic();
+
+                    /*$.ajax({
+                        type: 'get',
+                        url: 'https://localhost:44384/api/checkanswer/' + result,
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            var j = data;
+                            var jsonString = JSON.stringify(j)
+                            JSON.stringify(jsonString);
+
+                            var value = data;
+                            if (value == answer_value) {
+                                $("#CheckCorrect").attr('style', '');
+                                $(".ColorIconCheck").attr('style', '');
+                                $(".ColorIconCheckCross").attr('style', 'display:none');
+                            } else {
+                                $("#CheckCorrect").attr('style', 'display:none');
+                                $(".ColorIconCheck").attr('style', 'display:none');
+                                $(".ColorIconCheckCross").attr('style', '');
+                            }
+                        },
+                        error: function (data) {
+                            alert("Error to get json");
+                        }
+                    });*/
+                    }
+                });
+            });
+        });
+
+        //clear input at textarea
+        var input = document.querySelector('#clear');
+        var textarea = document.querySelector('#code_input');
+        input.addEventListener('click', function () {
+            textarea.value = '';
+        }, false);
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+<div class="modal-backdrop fade show"></div>
+
+</html>
